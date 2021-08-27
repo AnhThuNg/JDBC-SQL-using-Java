@@ -54,7 +54,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<Book> searchBookByName(String title, Statement statement) throws SQLException {
-        // select * from Book where title = 'a'
+        // select * from Book where title = 'book-name'
         ResultSet resultSet = statement.executeQuery("select * from Book where title = '" + title + "'");
         List<Book> bookList = new ArrayList<>();
         //show data
@@ -71,7 +71,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<Book> deleteBookByName(String title, Statement statement) throws SQLException {
-        //delete Book where title = 'cdb'
+        //delete Book where title = 'book-name'
         statement.executeUpdate("delete Book where title = '"+title+"'");
         List<Book> bookList = new ArrayList<>();
         return bookList;
